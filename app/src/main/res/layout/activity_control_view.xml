@@ -1,0 +1,806 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    tools:context=".ControlView"
+    android:background="#FFFFFFFF">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="#E1F4E0">
+
+        <RelativeLayout
+            android:id="@+id/below"
+            android:layout_width="match_parent"
+            android:layout_height="220dp"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="46dp"
+                android:layout_height="36dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="15dp"
+                android:backgroundTint="#009688"
+                android:onClick="chart"
+                app:cardElevation="10dp"
+                app:cardCornerRadius="18dp"
+                tools:ignore="UnusedAttribute">
+
+                <ImageView
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:src="@drawable/line_chart"
+                    tools:ignore="ContentDescription" />
+
+            </androidx.cardview.widget.CardView>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/control_top"
+                android:scaleType="fitXY"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintHorizontal_bias="0.495"
+                app:layout_constraintVertical_bias="0.685"
+                tools:ignore="ContentDescription" />
+
+            <ImageView
+                android:layout_width="70dp"
+                android:layout_height="35dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="15dp"
+                android:layout_marginBottom="28dp"
+                android:src="@drawable/tips_icon"
+                android:onClick="tips"
+                tools:ignore="ContentDescription" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="-20dp"
+            android:background="@drawable/menu_back"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="33dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="10dp"
+                    android:gravity="center_vertical"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="12dp"
+                    android:background="@drawable/pot_status_label_back"
+                    android:orientation="horizontal"
+                    tools:ignore="RelativeOverlap">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/pot_status"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:textColor="#373737"
+                        android:textAlignment="center" />
+
+                    <TextView
+                        android:id="@+id/online"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableStart="@drawable/online"
+                        android:drawablePadding="3dp"
+                        android:text="@string/online"
+                        android:layout_marginStart="5dp"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:textColor="#009688"
+                        android:textAlignment="center"/>
+
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="33dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="117dp"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/pot_name_label_back" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="33dp"
+                            android:layout_height="33dp"
+                            android:backgroundTint="#009688"
+                            app:cardCornerRadius="16dp"
+                            tools:ignore="UnusedAttribute">
+
+                            <ImageView
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_gravity="center_vertical|center_horizontal"
+                                android:src="@drawable/pot_icon"
+                                tools:ignore="ContentDescription" />
+
+                        </androidx.cardview.widget.CardView>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            tools:ignore="UseCompoundDrawables">
+
+                            <TextView
+                                android:id="@+id/potName"
+                                android:layout_width="52dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="3dp"
+                                android:text="@string/pot_01"
+                                android:textSize="15sp"
+                                android:textStyle="bold"
+                                android:textColor="#707070"
+                                android:onClick="potChanger"
+                                android:textAlignment="center"/>
+
+                            <ImageView
+                                android:layout_width="24dp"
+                                android:layout_height="24dp"
+                                android:src="@drawable/pot_right_arrow"
+                                android:onClick="potChanger"
+                                tools:ignore="ContentDescription" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                tools:ignore="DisableBaselineAlignment">
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="150dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_weight="1">
+
+                    <pl.droidsonroids.gif.GifImageView
+                        android:id="@+id/pot"
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        android:transitionName="logo_image"
+                        android:src="@drawable/pot"
+                        android:visibility="visible"
+                        tools:ignore="UnusedAttribute" />
+
+                    <ImageView
+                        android:id="@+id/pot_off"
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        android:src="@drawable/pot_off"
+                        android:transitionName="logo_image"
+                        android:visibility="invisible"
+                        tools:ignore="ContentDescription,UnusedAttribute" />
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="150dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="15dp"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/sensor_control_back"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        tools:ignore="UseCompoundDrawables">
+
+                        <ImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:src="@drawable/ic_icon"
+                            tools:ignore="ContentDescription" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:text="@string/sensors"
+                            android:textSize="17sp"
+                            android:textStyle="bold"
+                            android:textColor="#707070"
+                            android:textAlignment="center"/>
+
+                    </LinearLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/soil_moisture"
+                            android:textColor="#009688"
+                            android:textSize="16sp"
+                            tools:ignore="RelativeOverlap" />
+
+                        <Switch
+                            android:id="@+id/switch1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:track="@drawable/switch_track"
+                            android:thumb="@drawable/switch_thumb"
+                            android:scaleX="0.8"
+                            android:scaleY="0.8"
+                            android:checked="true"
+                            android:onClick="MoistureClick"/>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/snail_barrier"
+                            android:textSize="16sp"
+                            android:textColor="#009688"
+                            tools:ignore="RelativeOverlap" />
+
+                        <Switch
+                            android:id="@+id/switch2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:track="@drawable/switch_track"
+                            android:thumb="@drawable/switch_thumb"
+                            android:scaleX="0.8"
+                            android:scaleY="0.8"
+                            android:checked="true"
+                            android:onClick="BarrierClick"/>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/ultraviolet"
+                            android:textSize="16sp"
+                            android:textColor="#009688"
+                            tools:ignore="RelativeOverlap" />
+
+                        <Switch
+                            android:id="@+id/switch3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:track="@drawable/switch_track"
+                            android:thumb="@drawable/switch_thumb"
+                            android:scaleX="0.8"
+                            android:scaleY="0.8"
+                            android:checked="true"
+                            android:onClick="UvClick"/>
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="33dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="20dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:paddingStart="15dp"
+                android:paddingEnd="15dp"
+                android:background="@drawable/pot_status_label_back"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/realtime_sensor_data"
+                    android:drawableStart="@drawable/cloud_icon"
+                    android:drawablePadding="5dp"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="#5E5E5E"
+                    android:textAlignment="center"/>
+
+                <TextView
+                    android:id="@+id/date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/oct_11"
+                    android:layout_marginStart="10dp"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="#00BCD4"
+                    android:textAlignment="center"/>
+
+            </LinearLayout>
+
+            <ScrollView
+                android:id="@+id/S_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scrollbars="none">
+
+                <GridLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:rowCount="9"
+                    android:columnCount="1"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_row="0"
+                        android:layout_column="0"
+                        android:layout_rowWeight="1"
+                        android:layout_columnWeight="1"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:orientation="horizontal"
+                        tools:ignore="UnusedAttribute">
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="120dp"
+                            app:cardCornerRadius="15dp"
+                            app:cardElevation="5dp"
+                            android:layout_marginEnd="5dp"
+                            android:layout_weight="1">
+
+                            <LinearLayout
+                                android:id="@+id/moisture"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical"
+                                android:background="@drawable/b_g_gradient" />
+
+                            <ImageView
+                                android:layout_width="28dp"
+                                android:layout_height="28dp"
+                                android:src="@drawable/drop"
+                                android:layout_gravity="right"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginEnd="10dp"
+                                tools:ignore="ContentDescription,RtlHardcoded" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/moisture"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginStart="10dp"
+                                    android:textSize="18sp"
+                                    android:textStyle="bold"
+                                    android:textColor="#FFFFFF"
+                                    android:textAlignment="center"/>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="10dp"
+                                    android:text="@string/soil_moisture"
+                                    android:textAlignment="center"
+                                    android:textColor="#F8F8F8"
+                                    android:textSize="14sp" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:id="@+id/ml"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/_40"
+                                        android:layout_marginTop="10dp"
+                                        android:layout_marginStart="15dp"
+                                        android:textSize="25sp"
+                                        android:textStyle="bold"
+                                        android:textColor="#FFFFFF"
+                                        android:textAlignment="center"
+                                        tools:ignore="TooDeepLayout" />
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="120dp"
+                            app:cardCornerRadius="15dp"
+                            app:cardElevation="5dp"
+                            android:layout_marginStart="5dp"
+                            android:layout_weight="1">
+
+                            <LinearLayout
+                                android:id="@+id/uv_light"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical"
+                                android:background="@drawable/b_g_gradient" />
+
+                            <ImageView
+                                android:layout_width="28dp"
+                                android:layout_height="28dp"
+                                android:src="@drawable/sun"
+                                android:layout_gravity="right"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginEnd="10dp"
+                                tools:ignore="ContentDescription,RtlHardcoded" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/uv_light"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginStart="10dp"
+                                    android:textSize="18sp"
+                                    android:textStyle="bold"
+                                    android:textColor="#FFFFFF"
+                                    android:textAlignment="center"/>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="10dp"
+                                    android:text="@string/sunlight_level"
+                                    android:textAlignment="center"
+                                    android:textColor="#F8F8F8"
+                                    android:textSize="14sp" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:id="@+id/uv_level"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/_4"
+                                        android:layout_marginTop="10dp"
+                                        android:layout_marginStart="15dp"
+                                        android:textSize="25sp"
+                                        android:textStyle="bold"
+                                        android:textColor="#FFFFFF"
+                                        android:textAlignment="center"/>
+
+                                    <TextView
+                                        android:id="@+id/uv_status"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/bright"
+                                        android:layout_marginTop="10dp"
+                                        android:layout_marginStart="5dp"
+                                        android:textSize="16sp"
+                                        android:textColor="#FFFFFF"
+                                        android:textAlignment="center"/>
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+                    </LinearLayout>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp"
+                        android:layout_row="1"
+                        android:layout_column="0"
+                        android:layout_gravity="fill"
+                        android:layout_rowWeight="1"
+                        android:layout_columnWeight="1"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        app:cardCornerRadius="15dp"
+                        app:cardElevation="5dp"
+                        tools:ignore="GridLayout,UnusedAttribute">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:background="@drawable/b_g_gradient" />
+
+                        <ImageView
+                            android:layout_width="75dp"
+                            android:layout_height="75dp"
+                            android:src="@drawable/battery"
+                            android:layout_gravity="right|center_vertical"
+                            android:layout_marginEnd="20dp"
+                            tools:ignore="ContentDescription,RtlHardcoded" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/battery"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginStart="10dp"
+                                android:textSize="18sp"
+                                android:textStyle="bold"
+                                android:textColor="#FFFFFF"
+                                android:textAlignment="center"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="10dp"
+                                android:text="@string/pot_battery_level"
+                                android:textAlignment="center"
+                                android:textColor="#F8F8F8"
+                                android:textSize="14sp" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/battery_level"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/_50"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginStart="15dp"
+                                    android:textSize="25sp"
+                                    android:textStyle="bold"
+                                    android:textColor="#FFFFFF"
+                                    android:textAlignment="center"/>
+
+                                <TextView
+                                    android:id="@+id/batteryhours"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/_1448h"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginStart="5dp"
+                                    android:textSize="16sp"
+                                    android:textColor="#FFFFFF"
+                                    android:textAlignment="center"/>
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp"
+                        android:layout_row="2"
+                        android:layout_column="0"
+                        android:layout_gravity="fill"
+                        android:layout_rowWeight="1"
+                        android:layout_columnWeight="1"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        app:cardCornerRadius="15dp"
+                        app:cardElevation="5dp"
+                        tools:ignore="GridLayout,UnusedAttribute">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:background="@drawable/b_g_gradient" />
+
+                        <ImageView
+                            android:layout_width="75dp"
+                            android:layout_height="75dp"
+                            android:src="@drawable/snail"
+                            android:layout_gravity="right|center_vertical"
+                            android:layout_marginEnd="20dp"
+                            tools:ignore="ContentDescription,RtlHardcoded" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/attack"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginStart="10dp"
+                                android:textSize="18sp"
+                                android:textStyle="bold"
+                                android:textColor="#FFFFFF"
+                                android:textAlignment="center"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="10dp"
+                                android:text="@string/snail_attack_count"
+                                android:textAlignment="center"
+                                android:textColor="#F8F8F8"
+                                android:textSize="14sp" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/attack"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/_5"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginStart="15dp"
+                                    android:textSize="25sp"
+                                    android:textStyle="bold"
+                                    android:textColor="#FFFFFF"
+                                    android:textAlignment="center"/>
+
+                                <TextView
+                                    android:id="@+id/attackdays"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/in_3days"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginStart="5dp"
+                                    android:textSize="16sp"
+                                    android:textColor="#FFFFFF"
+                                    android:textAlignment="center"/>
+
+                                <androidx.cardview.widget.CardView
+                                    android:id="@+id/Log_In_Btn"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="36dp"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginStart="10dp"
+                                    app:cardElevation="10dp"
+                                    app:cardCornerRadius="10dp">
+
+                                    <LinearLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="match_parent"
+                                        android:gravity="center_horizontal"
+                                        android:onClick="reset"
+                                        android:background="@drawable/reset_btn_ripple_effect"
+                                        android:orientation="vertical"
+                                        tools:ignore="TooManyViews">
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:drawableStart="@drawable/reset_icon"
+                                            android:drawablePadding="3dp"
+                                            android:layout_marginStart="8dp"
+                                            android:layout_marginEnd="10dp"
+                                            android:layout_marginTop="4dp"
+                                            android:fontFamily="sans-serif-medium"
+                                            android:text="@string/reset"
+                                            android:textSize="18sp"
+                                            android:textColor="#FFFFFF"
+                                            android:onClick="reset"
+                                            android:background="@drawable/reset_btn_ripple_effect" />
+
+                                    </LinearLayout>
+
+                                </androidx.cardview.widget.CardView>
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="10dp"
+                        android:layout_row="3"
+                        android:layout_column="0"
+                        android:layout_rowWeight="1"
+                        android:layout_columnWeight="1"
+                        android:orientation="vertical"
+                        tools:ignore="UnusedAttribute,UselessLeaf" />
+
+                </GridLayout>
+
+            </ScrollView>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/progressBarCon"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:indeterminateTint="#009688"
+        android:visibility="visible"
+        tools:ignore="UnusedAttribute" />
+
+</RelativeLayout>

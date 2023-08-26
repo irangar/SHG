@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "434588984503",
+    "firebase_url": "https://smart-home-gardening-56498-default-rtdb.firebaseio.com",
+    "project_id": "smart-home-gardening-56498",
+    "storage_bucket": "smart-home-gardening-56498.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:434588984503:android:622fec3e0c637fe2731932",
+        "android_client_info": {
+          "package_name": "com.isoft.smarthomegardening"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "434588984503-oegqv435sf5nr49oaidueoo79ubomuqr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCptd3O9gN-vffcr5qVIvsj1jAsv3mtscQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "434588984503-oegqv435sf5nr49oaidueoo79ubomuqr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
